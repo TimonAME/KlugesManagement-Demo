@@ -1,6 +1,5 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import Navbar from './components/Navbar.vue'
+import { RouterView } from 'vue-router'
 import BaseLayout from './components/BaseLayout.vue'
 
 const userRole = 'ROLE_MANAGEMENT'
