@@ -2,6 +2,7 @@
 import { onMounted, onUnmounted, ref } from 'vue'
 import NavItem from '../components/navbar/NavItem.vue'
 import { defineProps, computed } from 'vue'
+import { useRouter } from 'vue-router'
 
 const props = defineProps({
   role: {
@@ -113,15 +114,18 @@ const toggleNavbar = () => {
 }
 
 // change page function
+const router = useRouter()
 const changePage = (page) => {
-  window.location.href = `/${page.toLowerCase()}`
+  //window.location.href = `/${page.toLowerCase()}`
+  router.push({ name: `${page.toLowerCase()}` })
 }
 
 /************ LOGOUT ************/
 //logout function
 const logout = () => {
   if (confirmLogout.value) {
-    window.location.href = '/dashboard'
+    //window.location.href = '/dashboard'
+    router.push({ name: `dashboard` })
   } else {
     confirmLogout.value = true
   }

@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted, watch, nextTick } from 'vue'
+import { useRouter } from 'vue-router'
 
 // Demo-Daten
 const demoUsers = [
@@ -214,7 +215,11 @@ const autoResize = (event) => {
   textarea.style.height = textarea.scrollHeight + 'px'
 }
 
-const goToUser = (id) => (window.location.href = `/user/${id}`)
+const router = useRouter()
+
+const goToUser = (id) => {
+  router.push({ name: 'user' })
+}
 
 // Search functionality
 watch(searchQuery, (newVal) => {
@@ -288,11 +293,13 @@ onMounted(() => {
         <div
           v-for="user in users"
           :key="user.id"
-           @click="() => {
+          @click="
+            () => {
               createChat(user.id)
               showDropdown = false
               searchQuery = ''
-            }"
+            }
+          "
           class="flex items-center p-3 rounded-window hover:bg-[#d19cff4b] cursor-pointer"
         >
           <div class="flex items-center justify-center w-10 h-10 bg-[#a38cff51] rounded-full">
