@@ -336,7 +336,7 @@ onUnmounted(() => {
         <span
           v-if="confirmLogout"
           @click="logout"
-          class="absolute block duration-100 bg-error_text hover:bg-red-700 text-white px-2 py-1 rounded-window shadow-lg cursor-pointer animate-pulse"
+          class="absolute block duration-100 bg-error-text hover:bg-red-700 text-white px-2 py-1 rounded-window shadow-lg cursor-pointer animate-pulse"
           :class="isExpanded ? 'ml-56' : 'ml-20'"
         >
           Bestätigen
