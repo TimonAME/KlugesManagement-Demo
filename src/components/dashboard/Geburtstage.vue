@@ -1,6 +1,8 @@
 <script setup>
 import { ref, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 
+const router = useRouter()
 const birthdays = ref([])
 const loading = ref(true)
 
@@ -53,7 +55,8 @@ const calculateAge = (birthDate) => {
 }
 
 const goToProfile = (birthday) => {
-  window.location.href = `/user`
+  //window.location.href = `/user`
+  router.push({ name: 'user' })
 }
 
 const getInitialsAvatar = (firstName, lastName) => {

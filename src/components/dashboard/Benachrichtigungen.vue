@@ -1,5 +1,8 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 let isEmpty = ref(false)
 let notifications = ref([])
@@ -99,7 +102,8 @@ const setCheck = async (id) => {
 
 // Navigate to notifications page
 const goToNotificationsPage = () => {
-  window.location.href = '/benachrichtigungen'
+  //window.location.href = '/benachrichtigungen'
+  router.push({ name: 'benachrichtigungen' })
 }
 
 // Function to format notification text (e.g. highlight dates)

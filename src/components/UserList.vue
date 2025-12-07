@@ -1,6 +1,7 @@
 <script setup>
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
-
+import { useRouter } from 'vue-router'
+const router = useRouter()
 // Demo-Daten
 const demoUsers = [
   {
@@ -265,11 +266,13 @@ const goToUrl = (location) => {
 
 // User management
 const addUser = () => {
-  window.location.href = '/registrierung'
+  //window.location.href = '/registrierung'
+  router.push({ name: 'registrierung' })
 }
 
 const goToUser = (id) => {
-  window.location.href = '/user'
+  //window.location.href = '/user'
+  router.push({ name: 'user' })
 }
 
 const formatRole = (role) => {
@@ -401,10 +404,12 @@ const recentActivities = ref([
                 <button
                   v-for="role in ROLE_CONFIG.additionalRoles"
                   :key="role.key"
-                   @click="() => {
+                  @click="
+                    () => {
                       goToUrl(role.name.toLowerCase())
                       isDropdownOpen = false
-                    }"
+                    }
+                  "
                   class="w-full text-left px-4 py-2 hover:bg-gray-50 flex items-center gap-2"
                 >
                   <span class="w-2 h-2 rounded-full" :style="{ backgroundColor: role.color }" />

@@ -117,7 +117,9 @@ const toggleNavbar = () => {
 const router = useRouter()
 const changePage = (page) => {
   //window.location.href = `/${page.toLowerCase()}`
-  router.push({ name: `${page.toLowerCase()}` })
+  if (!page) return
+  const path = `/${page.toLowerCase()}`
+  router.push(path)
 }
 
 /************ LOGOUT ************/
@@ -125,7 +127,7 @@ const changePage = (page) => {
 const logout = () => {
   if (confirmLogout.value) {
     //window.location.href = '/dashboard'
-    router.push({ name: `dashboard` })
+    router.push({ name: 'dashboard' })
   } else {
     confirmLogout.value = true
   }

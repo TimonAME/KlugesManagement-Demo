@@ -1,6 +1,9 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { defineProps } from 'vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 // Define props
 const props = defineProps({
@@ -112,14 +115,17 @@ const getIconPath = (iconName) => {
 // go to the page when clicked
 const changePage = (page) => {
   if (page === 'Logout') {
-    window.location.href = '/logout'
+    //window.location.href = '/logout'
+    router.push({ name: 'dashboard' })
     return
   }
 
   if (props.role === 'ROLE_TEACHER' && page === 'benutzerliste') {
     page = 'benutzerliste/schueler'
   }
-  window.location.href = `/${page}`
+  //window.location.href = `/${page}`
+  const path = `/${page}`
+  router.push(path)
 }
 </script>
 

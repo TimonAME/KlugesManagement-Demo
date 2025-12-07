@@ -1,5 +1,8 @@
 <script setup>
 import { onMounted, ref } from 'vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 // Demo user data
 const user = ref({
@@ -44,7 +47,8 @@ const copyToClipboard = (text) => {
 
 // Navigation back
 const goToList = () => {
-  window.location.href = `/benutzerliste`
+  //window.location.href = `/benutzerliste`
+  router.push({ name: 'benutzerliste' })
 }
 
 // Role formatting

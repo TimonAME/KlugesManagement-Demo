@@ -1,6 +1,8 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount, defineProps } from 'vue'
+import { useRouter } from 'vue-router'
 
+const router = useRouter()
 const showDropdown = ref(false)
 
 const props = defineProps({
@@ -19,13 +21,16 @@ const categories = [
 const goToCategory = (url) => {
   switch (url) {
     case '/dashboard':
-      window.location.href = url
+      //window.location.href = url
+      router.push({ name: url })
       break
     case '/tipps':
-      window.location.href = url
+      //window.location.href = url
+      router.push({ name: url })
       break
     case '/':
-      window.location.href = url
+      //window.location.href = url
+      router.push({ name: url })
       break
     default:
       console.log('Invalid URL')
@@ -51,7 +56,8 @@ onBeforeUnmount(() => {
 })
 
 const goToUserPage = () => {
-  window.location.href = '/user'
+  //window.location.href = '/user'
+  router.push({ name: 'user' })
 }
 </script>
 

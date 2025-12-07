@@ -150,10 +150,13 @@ const selectedCategoryComponent = computed(() => {
 
 const selectCategory = (category) => {
   if (category === 'Arbeitszeiten') {
-    window.location.href = '/arbeitsstunden'
+    //window.location.href = '/arbeitsstunden'
+    router.push({ name: 'arbeitsstunden' })
     return
   }
-  window.history.pushState({}, '', `/user/${category}`)
+  //window.history.pushState({}, '', `/user/${category}`)
+  router.push({ name: 'userKategory', params: { kategory: category } })
+
   selectedCategory.value = category
   isDropdownOpen.value = false
 }
