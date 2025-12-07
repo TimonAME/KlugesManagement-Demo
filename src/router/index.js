@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import Dashboard from '@/components/Dashboard.vue'
 import Notifications from '@/components/Notifications.vue'
 import Todo from '@/components/Todo.vue'
@@ -12,7 +12,7 @@ import UserProfile from '@/components/UserProfile.vue'
 import Calendar from '@/components/Calendar.vue'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
