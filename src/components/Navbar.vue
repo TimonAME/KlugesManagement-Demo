@@ -118,7 +118,7 @@ const router = useRouter()
 const changePage = (page) => {
   //window.location.href = `/${page.toLowerCase()}`
   if (!page) return
-  const path = `/${page.toLowerCase()}`
+  const path = `${page.toLowerCase()}`
   router.push(path)
 }
 
