@@ -11,11 +11,12 @@ const props = defineProps({
   todos: Object,
   birthdays: Object,
   exams: Object,
+  /*
   role: {
     type: String,
     required: true,
     default: 'ROLE_MANAGEMENT',
-  },
+  },*/
 })
 
 // Prüfen, ob es sich um ein mobiles Gerät handelt
@@ -47,7 +48,7 @@ const views = {
 const activeView = computed(() => {
   // return the view that contains the current role
   //console.log(Object.keys(views).find((key) => views[key].includes(props.role)));
-  return Object.keys(views).find((key) => views[key].includes(props.role))
+  return Object.keys(views).find((key) => views[key].includes('ROLE_MANAGEMENT'))
 })
 </script>
 

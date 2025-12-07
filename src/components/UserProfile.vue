@@ -1,6 +1,6 @@
 <script setup>
 import { computed, onMounted, ref, watch } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 import Stammdaten from '../components/userProfile/Stammdaten.vue'
 import Faecher from '../components/userProfile/Faecher.vue'
 import TODOs from '../components/userProfile/TODOs.vue'
@@ -11,6 +11,7 @@ import Tipps from '../components/userProfile/Tipps.vue'
 import DeleteUser from '../components/userProfile/DeleteUser.vue'
 import Berechtigungen from '../components/userProfile/Berechtigungen.vue'
 
+const router = useRouter()
 const route = useRoute()
 
 // === Demo User ===
@@ -166,14 +167,10 @@ watch(
   () => route.params.kategory,
   (newKategory) => {
     if (newKategory) {
-      // Normalize the category name (handle URL encoding if needed)
       const decodedCategory = decodeURIComponent(newKategory)
-
-      // Check if the category exists and is accessible
       if (visibleCategories.value.includes(decodedCategory)) {
         selectedCategory.value = decodedCategory
       } else if (visibleCategories.value.length > 0) {
-        // Fallback to first visible category if not found
         selectedCategory.value = visibleCategories.value[0]
       }
     }
@@ -204,7 +201,7 @@ onMounted(() => {
   <div
     class="md:absolute bg-window_bg rounded-window shadow-window w-full md:w-[calc(256px)] md:h-[100%] md:left-0 md:top-0 p-2 mb-4 md:mb-0 overflow-y-auto"
   >
-    <BasicUserInformation :user="user" :currentUserRole="ROLE_MANAGEMENT" />
+    <BasicUserInformation :user="user" :currentUserRole="currentUserRole" />
   </div>
 
   <!-- Kategories -->

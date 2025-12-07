@@ -52,9 +52,9 @@ const pageUrl = computed(() => {
     ></div>
   </div>
 
-  <a
+  <router-link
     v-else
-    :href="pageUrl"
+    :to="pageUrl"
     :class="
       activePage.toLowerCase() === navName.toLowerCase()
         ? 'w-full flex items-center justify-start border-r-2 border-main relative group cursor-pointer'
@@ -99,7 +99,7 @@ const pageUrl = computed(() => {
     >
       {{ truncatedNavName }}
     </span>
-  </a>
+  </router-link>
 </template>
 
 <style scoped></style>

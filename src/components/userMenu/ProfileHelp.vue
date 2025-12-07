@@ -22,15 +22,15 @@ const goToCategory = (url) => {
   switch (url) {
     case '/dashboard':
       //window.location.href = url
-      router.push({ name: url })
+      router.push({ name: 'dashboard' })
       break
     case '/tipps':
       //window.location.href = url
-      router.push({ name: url })
+      router.push({ name: 'tipps' })
       break
     case '/':
       //window.location.href = url
-      router.push({ name: url })
+      router.push({ name: 'dashboard' })
       break
     default:
       console.log('Invalid URL')

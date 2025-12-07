@@ -109,7 +109,7 @@ const filteredPages = computed(() => {
 
 // Get the SVG path for the icon
 const getIconPath = (iconName) => {
-  return `../../../images/icons/${iconName}.svg`
+  return `${import.meta.env.BASE_URL}assets/icons/${iconName}.svg`
 }
 
 // go to the page when clicked
