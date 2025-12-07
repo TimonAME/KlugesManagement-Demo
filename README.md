@@ -1,38 +1,35 @@
-# klug
+# Klug Vue - Management Demo
 
-This template should help get you started developing with Vue 3 in Vite.
+## Über das Projekt
 
-## Recommended IDE Setup
+Klug Vue ist eine Frontend-Demo-Anwendung für ein intelligentes Management-System, entwickelt mit Vue.js.
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Features
 
-## Recommended Browser Setup
+- **Dashboard**: Übersichtliche Verwaltungsoberfläche
+- **Benutzerverwaltung**: Benutzer hinzufügen und verwalten
+- **Aufgabenverwaltung**: Erstellen und Verfolgen von Aufgaben
+- **Responsive Design**: Optimiert für verschiedene Bildschirmgrößen
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+## Wichtige Hinweise
 
-## Customize configuration
+### Keine Backend-Anbindung
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+Diese Anwendung ist eine **Frontend-Demo** ohne Backend-Integration. Alle Funktionen arbeiten mit Mock-Daten. Eine produktive Nutzung erfordert die Implementierung einer Backend-API.
 
-## Project Setup
+### Kalender-Komponente
 
-```sh
+Der in der Demo sichtbare Kalender ist eine **Referenzgrafik** und nicht funktional implementiert, da die Entwicklung nicht Teil dieser Arbeit war.
+
+## Installation & Start
+
+```bash
 npm install
+npm run serve
 ```
 
-### Compile and Hot-Reload for Development
+## Technologie-Stack
 
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+- Vue.js 3
+- CSS3
+- JavaScript ES6+
