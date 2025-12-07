@@ -191,7 +191,7 @@ onUnmounted(() => {
         @click="changePage('dashboard')"
         class="w-full h-20 flex items-center justify-start cursor-pointer"
       >
-        <img src="../assets/icon.svg" alt="Logo Icon" title="Company Logo" class="w-12 m-3" />
+        <img src="/assets/icon.svg" alt="Logo Icon" title="Company Logo" class="w-12 m-3" />
         <span
           class="text-main transition-all font-semibold"
           :class="

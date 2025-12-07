@@ -26,7 +26,7 @@ const props = defineProps({
 
 // get the SVG path
 const iconPath = computed(() => {
-  return `/src/assets/icons/${props.iconName}.svg`
+  return `/assets/icons/${props.iconName}.svg`
 })
 
 // truncate navName if longer than 14 characters

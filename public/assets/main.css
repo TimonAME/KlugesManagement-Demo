@@ -1,0 +1,81 @@
+@import 'tailwindcss';
+
+/* Define your design tokens */
+@theme {
+  --color-main: #9900fe;
+  --color-first-accent: #d19cff;
+  --color-second-accent: #a38cff;
+  --color-first-bg: #fef0ff;
+  --color-second-bg: #fef0ff;
+  --color-window-bg: #ffffff;
+  --color-icon-color: #5f6368;
+  --color-primary-text: #25282b;
+  --color-secondary-text: #5f6368;
+  --color-warning-text: #ffb82e;
+  --color-error-text: #f93232;
+  --color-success-text: #439f6e;
+
+  --radius-window: 0.25rem;
+  --radius-button: 0.25rem;
+
+  --shadow-window: 2px 2px 8px 0 rgba(0, 0, 0, 0.1);
+
+  --size-18: 72px;
+  --margin-18: 72px;
+}
+
+/* Alias back to old utility class names */
+@utility bg-main {
+  background-color: var(--color-main);
+}
+@utility bg-first_accent {
+  background-color: var(--color-first-accent);
+}
+@utility bg-second_accent {
+  background-color: var(--color-second-accent);
+}
+@utility bg-first_bg {
+  background-color: var(--color-first-bg);
+}
+@utility bg-second_bg {
+  background-color: var(--color-second-bg);
+}
+@utility bg-window_bg {
+  background-color: var(--color-window-bg);
+}
+@utility text-icon_color {
+  color: var(--color-icon-color);
+}
+@utility text-primary_text {
+  color: var(--color-primary-text);
+}
+@utility text-secondary_text {
+  color: var(--color-secondary-text);
+}
+@utility text-warning_text {
+  color: var(--color-warning-text);
+}
+@utility text-error_text {
+  color: var(--color-error-text);
+}
+@utility text-success_text {
+  color: var(--color-success-text);
+}
+
+@utility rounded-window {
+  border-radius: var(--radius-window);
+}
+@utility rounded-button {
+  border-radius: var(--radius-button);
+}
+
+@utility shadow-window {
+  box-shadow: var(--shadow-window);
+}
+
+@utility w-18 {
+  width: var(--size-18);
+}
+@utility m-18 {
+  margin: var(--margin-18);
+}
